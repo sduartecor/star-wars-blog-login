@@ -23,7 +23,7 @@ export const CardPersonajes = () => {
 	<li className="list-group-item"></li>
   </ul>
 
-				<div className="d-flex justify-content-between align-items-end">
+				<div className="d-flex justify-content-between">
 				<Link className="btn btn-outline-primary" to={"/detail-people/"+ (index+1) } >Learn More!</Link>
 				<Link className="btn btn-outline-light" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
 				</div>

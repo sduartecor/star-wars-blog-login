@@ -14,7 +14,7 @@ export const CardVehiculos = () => {
 	  <div className="card-body">
 	  <h4 className="card-title">{item.name}</h4>
 
-				<div className="d-flex justify-content-between align-items-end">
+				<div className="d-flex justify-content-between">
 				<Link className="btn btn-outline-primary" to={"/detail-vehicle/"+ (item.uid) } >Learn More!</Link>
 				<Link className="btn btn-outline-light" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
 				</div>

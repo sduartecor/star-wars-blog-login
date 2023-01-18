@@ -7,7 +7,7 @@ export const CardPlanetas = () => {
 	const {store, actions} = useContext(Context);
 
     return(
-		<>		{store.planetas.map((item, index) =>  <div className="m-4 ms-0" key={index}>
+		<>		{store.planetas.map((item, index) =>  <div className="m-4 ms-0 " key={index}>
 		<div className="card h-100" style={{width: "18rem"}}>
 	  <img src={"https://starwars-visualguide.com/assets/img/planets/" + (index + 1) + ".jpg"} className="card-img-top" alt="..."/>
 	  <div className="card-body">

@@ -130,9 +130,9 @@ const getState = ({ getStore, getActions, setStore }) => {
                     changeColor: (item) => {
                       let store = getStore()
                         if (store.listFavorite.includes(item)) {
-                            return "fa fa-heart text-warning";           
+                            return "fa fa-heart text-warning fs-4";           
                        } else {
-                         return "far fa-heart text-warning"
+                         return "far fa-heart text-warning fs-4"
                     }
                 }
 
