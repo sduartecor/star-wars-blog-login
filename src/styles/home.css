@@ -16,3 +16,12 @@
 .scrollable::-webkit-scrollbar-corner {
     display: none;
 }
+
+.btnEliminar button {
+    visibility: hidden;
+}
+
+.btnEliminar:hover button {
+    visibility: visible;
+}
+

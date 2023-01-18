@@ -4,15 +4,13 @@ import "../../styles/home.css";
 import { CardPersonajes } from "../component/cardPersonajes.jsx";
 import { CardVehiculos } from "../component/cardVehiculos.jsx";
 import { CardPlanetas } from "../component/cardPlanetas.jsx"
+import { number } from "prop-types";
 
 export const Home = () => {
 
-
-	
-
 	return(
 		<div className="container-fluid">
-	<div className="container">
+	<div className="container w-75">
 
 			
 		<h1 className="text-danger mb-4">Characters</h1>
