@@ -168,7 +168,7 @@ const getState = ({
                 } else {
                     return "far fa-heart text-danger fs-4"
                 }
-            },
+            }
 
 
 

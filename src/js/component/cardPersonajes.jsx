@@ -11,13 +11,13 @@ export const CardPersonajes = () => {
 
 
     return(
-		<>		{store.personajes.map((item, index) =>  <div className="btn m-4 ms-0 col-auto nounderline"  key={index}>
+		<>		{store.personajes.map((item, index) =>  <div className="btn m-4 ms-0 col-auto rounded"  key={index}>
 		<div className="card bg-dark text-white border-danger" style={{width: "16rem", height: "30rem"}}>
-		<Link to={"/detail-people/"+ (item.url.match(/\d+/g)) }>
+		<Link style={{ textDecoration: "none" }} to={"/detail-people/"+ (item.url.match(/\d+/g)) }>
 	  <div className="border-bottom border-danger"><img src={"https://starwars-visualguide.com/assets/img/characters/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
 	  <div className="card-body">
 	  
-	  <p className="card-title fs-6 text-uppercase fw-bold text-start text-white nounderline">{item.name}</p>
+	  <p className="card-title fs-6 text-uppercase fw-bold text-start text-white ">{item.name}</p>
 	  
 	  
 	  </div>

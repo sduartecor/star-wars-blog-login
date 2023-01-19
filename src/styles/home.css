@@ -21,10 +21,11 @@ body {
     background-color: red !important;
 }
 
-.nounderline {
-    text-decoration: none !important;
+
+.btnEliminar button {
+    visibility: hidden;
 }
 
-p {
-    text-decoration: none !important;
+.btnEliminar:hover button {
+    visibility: visible;
 }
