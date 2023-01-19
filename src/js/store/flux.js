@@ -72,7 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                 getListVehicle: () => {
                     try {
-                        fetch('https://swapi.tech/api/vehicles/', {
+                        fetch('https://swapi.dev/api/vehicles/', {
                             method: "GET",
                             headers: {
                         "Content-Type": "application/json"

@@ -22,7 +22,7 @@ export const Navbar = () => {
   </button>
   <ul className="dropdown-menu" >
   {store.listFavorite.map((item, id) => <li className="dropdown-item float-start btnEliminar" key={id}>{item.name}<button type="button" className="btn border-0 float-end"  onClick={() => actions.deleteFavorite(item)}><i className="fa fa-trash"></i></button> </li>)}
-  <li className={"dropdown-item disabled " + store.mensaje} aria-disabled="true">(empty)</li>
+  <li className={"dropdown-item disabled text-center " + store.mensaje} aria-disabled="true">(empty)</li>
   </ul>
 </div>
 </div>
