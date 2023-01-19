@@ -7,26 +7,20 @@ export const CardPlanetas = () => {
 	const {store, actions} = useContext(Context);
 
     return(
-		<>		{store.planetas.map((item, index) =>  <div className="m-4 ms-0 " key={index}>
-		<div className="card h-100" style={{width: "18rem"}}>
-	  <img src={"https://starwars-visualguide.com/assets/img/planets/" + (item.url.match(/\d+/g)) + ".jpg"} className="card-img-top" alt="..."/>
+		<>		{store.planetas.map((item, id) => <div  className="btn m-4 ms-0 col-auto rounded"  key={id}>
+		<div className="card bg-dark text-white border-danger" style={{width: "16rem", height: "24rem"}}>
+		<Link  to={"/detail-planet/"+ (item.url.match(/\d+/g)) }>
+		<div className="border-bottom border-danger"><img src={"https://starwars-visualguide.com/assets/img/planets/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
 	  <div className="card-body">
-	  <h4 className="card-title">{item.name}</h4>
-
-				<ul className="list-group list-group-flush">
-				<li className="list-group-item"></li>
-    <li className="list-group-item">Population: <strong>{item.population}</strong> </li>
-    <li className="list-group-item">Terrain: <strong>{item.terrain}</strong> </li>
-	<li className="list-group-item"></li>
-  </ul>
-
-				<div className="d-flex justify-content-between">
-				<Link className="btn btn-outline-primary" to={"/detail-planet/"+ (item.url.match(/\d+/g)) } >Learn More!</Link>
-				<Link className="btn btn-outline-light" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
-				</div>
+	  <p className="card-title fs-6 text-uppercase fw-bold text-start text-white nounderline">{item.name}</p>
+	  </div>
+	  </Link> 
+	  <div className="card-footer border-danger"> 
+	  <Link className="btn btn-outline-dark border-0" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
 	  </div>
 	  </div>
-	  </div> )}
+	 
+	  </div>)}
 		</>
 
     );

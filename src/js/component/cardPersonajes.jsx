@@ -8,30 +8,26 @@ export const CardPersonajes = () => {
 	const {store, actions} = useContext(Context);
 
 
+
+
     return(
-		<>		{store.personajes.map((item, index) =>  <div className="m-4 ms-0" key={index}>
-		<div className="card h-100" style={{width: "18rem"}}>
-	  <img src={"https://starwars-visualguide.com/assets/img/characters/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/>
+		<>		{store.personajes.map((item, index) =>  <div className="btn m-4 ms-0 col-auto nounderline"  key={index}>
+		<div className="card bg-dark text-white border-danger" style={{width: "16rem", height: "30rem"}}>
+		<Link to={"/detail-people/"+ (item.url.match(/\d+/g)) }>
+	  <div className="border-bottom border-danger"><img src={"https://starwars-visualguide.com/assets/img/characters/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
 	  <div className="card-body">
-	  <h4 className="card-title">{item.name}</h4>
-				
-				<ul className="list-group list-group-flush">
-				<li className="list-group-item"></li>
-    <li className="list-group-item">Gender: <strong>{item.gender}</strong></li>
-    <li className="list-group-item">Hair color: <strong>{item.hair_color}</strong></li>
-    <li className="list-group-item">Eye color: <strong>{item.eye_color}</strong></li>
-	<li className="list-group-item"></li>
-  </ul>
-
-				<div className="d-flex justify-content-between">
-				<Link className="btn btn-outline-primary" to={"/detail-people/"+ (item.url.match(/\d+/g)) } >Learn More!</Link>
-				<Link className="btn btn-outline-light" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
-				</div>
+	  
+	  <p className="card-title fs-6 text-uppercase fw-bold text-start text-white nounderline">{item.name}</p>
+	  
+	  
+	  </div>
+	  </Link> 
+	  <div className="card-footer border-danger"> 
+	  <Link className="btn btn-outline-dark border-0" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
 	  </div>
 	  </div>
-	  </div> )}
+	  </div>)}
 		</>
-
     );
 }
 

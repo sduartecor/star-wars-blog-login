@@ -8,26 +8,20 @@ export const CardVehiculos = () => {
 
 
     return(
-		<>		{store.vehiculos.map((item, index) =>  <div className="m-4 ms-0" key={index}>
-		<div className="card h-100" style={{width: "18rem"}}>
-	  <img src={"https://starwars-visualguide.com/assets/img/vehicles/" + (item.url.match(/\d+/g)) + ".jpg"} className="card-img-top" alt="..."/>
+		<>		{store.vehiculos.map((item, id) =>  <div  className="btn m-4 ms-0 col-auto rounded"  key={id}>
+		<div className="card bg-dark text-white border-danger" style={{width: "16rem", height: "18rem"}}>
+		<Link  to={"/detail-vehicle/"+ (item.url.match(/\d+/g)) }>
+		<div className="border-bottom border-danger"><img src={"https://starwars-visualguide.com/assets/img/vehicles/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
 	  <div className="card-body">
-	  <h4 className="card-title">{item.name}</h4>
-	  <ul className="list-group list-group-flush">
-	  	<li className="list-group-item"></li>
-			<li className="list-group-item">Model: <strong>{item.model}</strong></li>
-			<li className="list-group-item">Passengers: <strong>{item.passengers}</strong></li>
-			<li className="list-group-item"></li>
-	  </ul>
-
-				<div className="d-flex justify-content-between">
-				<Link className="btn btn-outline-primary" to={"/detail-vehicle/"+ (item.url.match(/\d+/g)) } >Learn More!</Link>
-				<Link className="btn btn-outline-light" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
-				</div>
-				
+	  <p className="card-title fs-6 text-uppercase fw-bold text-start text-white nounderline">{item.name}</p>
+	  </div>
+	  </Link> 
+	  <div className="card-footer border-danger"> 
+	  <Link className="btn btn-outline-dark border-0" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
 	  </div>
 	  </div>
-	  </div> )}
+	 
+	  </div>)}
 		</>
 
     );

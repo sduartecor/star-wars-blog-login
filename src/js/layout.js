@@ -33,7 +33,9 @@ const Layout = () => {
         return ( <div >
             <BrowserRouter basename = {basename} >
             <ScrollToTop >
+            <div className="m-4" >
             <Navbar />
+            </div>
             <Routes>
             <Route path = "/" element = { <Home /> } /> 
             <Route path = "/demo" element = {<Demo /> }/> 

@@ -10,6 +10,7 @@ export const DetailsPeople = () => {
     //Obtengo lista del usuario
 	useEffect(() => {
 		actions.getDetailPeople(params.id);
+		window.scrollTo(0, 0)
 	}, []);
 
     return (
@@ -19,7 +20,7 @@ export const DetailsPeople = () => {
 		<div className="col-md-4">
 						<img src={"https://starwars-visualguide.com/assets/img/characters/" + (params.id) + ".jpg"} className="img-fluid rounded-start" alt="..." style={{width: "18rem"}}/>
 					</div>
-					<div className="col-md-8">
+					<div className="col-md-8 text-white">
   <h1 className="display-4">{store.detallePeople.name}</h1>
   <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   </div>

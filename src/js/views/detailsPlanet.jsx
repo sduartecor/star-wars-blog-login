@@ -10,6 +10,7 @@ export const DetailsPlanet = () => {
     //Obtengo lista del usuario
 	useEffect(() => {
 		actions.getDetailPlanet(params.id);
+		window.scrollTo(0, 0)
 	}, []);
 
 
@@ -20,7 +21,7 @@ export const DetailsPlanet = () => {
 		<div className="col-md-4">
 						<img src={"https://starwars-visualguide.com/assets/img/planets/" + (params.id) + ".jpg"} className="img-fluid rounded-start" alt="..." style={{width: "18rem"}}/>
 					</div>
-					<div className="col-md-8">
+					<div className="col-md-8 text-white">
   <h1 className="display-4">{store.detallePlanet.name}</h1>
   <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   </div>
