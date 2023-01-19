@@ -168,6 +168,15 @@ const getState = ({
                 } else {
                     return "far fa-heart text-danger fs-4"
                 }
+            },
+
+            changeOpacity: (item) => {
+                let store = getStore()
+                if (store.listFavorite.includes(item)) {
+                    return "opacity-100";
+                } else {
+                    return ""
+                }
             }
 
 

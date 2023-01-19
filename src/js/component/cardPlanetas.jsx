@@ -8,7 +8,7 @@ export const CardPlanetas = () => {
 
     return(
 		<>		{store.planetas.map((item, id) => <div className="btn m-4 ms-0 col-auto rounded"  key={id}>
-		<div className="card bg-dark text-white border-danger" style={{width: "16rem", height: "24rem"}}>
+		<div className={"card bg-dark text-white border-danger " + actions.changeOpacity(item)} style={{width: "16rem", height: "24rem", }}>
 		<Link style={{ textDecoration: "none" }} to={"/detail-planet/"+ (item.url.match(/\d+/g)) }>
 		<div className="border-bottom border-danger"><img src={"https://starwars-visualguide.com/assets/img/planets/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
 	  <div className="card-body">
