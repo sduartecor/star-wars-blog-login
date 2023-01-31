@@ -19,7 +19,7 @@ export const CardVehiculos = () => {
 
     return(
 		<>		{store.vehiculos.map((item, id) =>  <div  className="btn m-4 ms-0 col-auto rounded"  key={id}>
-		<div className={"card bg-dark text-white border-danger " + actions.changeOpacity(item)} style={{width: "16rem", height: "18rem"}}>
+		<div className={"card bg-dark text-white border-danger " + actions.changeOpacity(item)} style={{width: "19rem", height: "20rem"}}>
 		<Link style={{ textDecoration: "none" }}  to={"/detail-vehicle/"+ (item.url.match(/\d+/g)) }>
 		<div className="border-bottom border-danger"><img src={"https://starwars-visualguide.com/assets/img/vehicles/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
 	  <div className="card-body">
