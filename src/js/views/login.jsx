@@ -15,7 +15,11 @@ export const Login = () => {
     
     function login(e){
         e.preventDefault()
+        if (username != "" && password != "") {
         actions.loginUser(username, password)
+        } else {
+            alert("Faltan datos por completar")
+        }
     }
     
 
