@@ -19,8 +19,8 @@ export const Login = () => {
     }
 
     return (
-		<div className="container w-50 text-white">
-
+		<div className="container w-50 text-white mb-5">
+            <h1 className="text-center text-danger border-bottom border-danger">LOG IN</h1>
 {store.auth === true ? <Navigate to="/"/>:
             <form onSubmit={login}>
 
@@ -34,7 +34,10 @@ export const Login = () => {
             <input type="password" className="form-control" value={password} onChange={(e)=>setPassword(e.target.value)} id="password"/>
         </div>
 
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <div className="d-grid gap-2 col-6 mx-auto">
+   <button type="submit" className="btn btn-lg btn-danger">Submit</button>
+
+   </div>
         </form>
 }
 </div>

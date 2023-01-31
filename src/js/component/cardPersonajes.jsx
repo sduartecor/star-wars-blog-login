@@ -4,6 +4,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 
 
+
 export const CardPersonajes = () => {
 
 	const {store, actions} = useContext(Context);
@@ -13,7 +14,7 @@ export const CardPersonajes = () => {
 		if (store.auth === true) {
 			actions.addFavorite(item)
 		} else {
-			alert("Hola")
+			alert("Debe iniciar sesión")
 		}
 	}
 
@@ -34,6 +35,8 @@ export const CardPersonajes = () => {
 	  <Link className="btn btn-outline-dark border-0" onClick={()=> añadirFavoritos(item)}><i className={actions.changeColor(item)}></i></Link>
 	  </div>
 	  </div>
+
+
 	  </div>)}
 		</>
     );

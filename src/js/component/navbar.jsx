@@ -27,7 +27,11 @@ export const Navbar = () => {
 </div>
 
 <div className="dropdown d-flex float-end me-3" >
-<Link type="btn btn-lg" to={"/login"} className={"btn btn-outline-danger " + store.viewAuth}>Log In</Link>
+<Link type="btn btn-lg" to={"/login"} className={"btn btn-outline-danger " + store.viewAuth}>Log in</Link>
+</div>
+
+<div className="dropdown d-flex float-end me-3" >
+<Link type="btn btn-lg" to={"/signup"} className={"btn btn-danger " + store.viewAuth}>Sign up</Link>
 </div>
 
 <div className="dropdown d-flex float-end me-3" >

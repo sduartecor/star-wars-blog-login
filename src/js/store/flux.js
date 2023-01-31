@@ -217,6 +217,40 @@ const getState = ({
                         return response.json()
                     }).then((data) => {
                         localStorage.setItem("token", data.access_token)
+                        if (data.msg === "Bad username or password" || data.msg === "User does not exist") {
+                            alert(data.msg)
+                        }
+                        console.log(data);
+                    });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+
+            signupUser: (firstname, lastname, email, username, password) => {
+                try {
+                    fetch('https://3000-sduartecor-starwarsapir-6aum3vely7b.ws-us84.gitpod.io/signup', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            "first_name": firstname,
+                            "last_name": lastname,
+                            "email": email,
+                            "username": username,
+                            "password": password
+                        })
+                    }).then((response) => {
+                        if (response.status === 200) {
+                            alert("Usuario creado con exito!")
+                        }
+                        return response.json()
+                    }).then((data) => {
+                        if (data.msg === "User exist in the system") {
+                            alert(data.msg)
+                        }
                         console.log(data);
                     });
                     //
