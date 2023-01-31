@@ -22,6 +22,7 @@ import {
 import { DetailsPeople } from "./views/detailsPeople.jsx";
 import { DetailsVehicle } from "./views/detailsVehicle.jsx";
 import { DetailsPlanet } from "./views/detailsPlanet.jsx";
+import { Login } from "./views/login.jsx";
 
 
 //create your first component
@@ -42,6 +43,7 @@ const Layout = () => {
             <Route path = "/detail-people/:id" element = {<DetailsPeople /> }/> 
             <Route path = "/detail-planet/:id" element = {<DetailsPlanet /> }/>
             <Route path = "/detail-vehicle/:id" element = {<DetailsVehicle /> }/> 
+            <Route path = "/login" element = {<Login /> }/> 
              <Route path = "/single/:theid" element = {<Single/>}/>  
               <Route path = "*" element = {<h1 > Not found! </h1>} />
                 </Routes>  

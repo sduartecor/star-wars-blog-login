@@ -20,7 +20,7 @@ export const DetailsPlanet = () => {
 		<div className="rounded border border-danger">
 		<div className="row g-0">
 		<div className="col-md-4  border-end border-danger">
-						<img src={"https://starwars-visualguide.com/assets/img/planets/" + (params.id) + ".jpg"} className="img-fluid rounded-start" alt="..." />
+						<img src={params.id == "1" ? "https://static.wikia.nocookie.net/theclonewiki/images/b/b4/Tatooine-TCW.png" : "https://starwars-visualguide.com/assets/img/planets/"+ (params.id) +".jpg"} className="img-fluid rounded-start" alt="..." />
 					</div>
 					<div className="col-md-8 text-white">
   <h1 className="display-2 mx-3">{store.detallePlanet.name}</h1>

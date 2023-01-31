@@ -10,7 +10,7 @@ export const CardPlanetas = () => {
 		<>		{store.planetas.map((item, id) => <div className="btn m-4 ms-0 col-auto rounded"  key={id}>
 		<div className={"card bg-dark text-white border-danger " + actions.changeOpacity(item)} style={{width: "16rem", height: "24rem", }}>
 		<Link style={{ textDecoration: "none" }} to={"/detail-planet/"+ (item.url.match(/\d+/g)) }>
-		<div className="border-bottom border-danger"><img src={"https://starwars-visualguide.com/assets/img/planets/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
+		<div className="border-bottom border-danger"><img src={ (item.url.match(/\d+/g)) == "1" ? "https://static.wikia.nocookie.net/theclonewiki/images/b/b4/Tatooine-TCW.png" : "https://starwars-visualguide.com/assets/img/planets/"+ (item.url.match(/\d+/g)) +".jpg"}  className="card-img-top" alt="..."/></div>
 	  <div className="card-body">
 	  <p className="card-title fs-6 text-uppercase fw-bold text-start text-white ">{item.name}</p>
 	  </div>

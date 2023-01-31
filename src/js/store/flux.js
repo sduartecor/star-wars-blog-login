@@ -13,12 +13,16 @@ const getState = ({
             detallePeople: {},
             detallePlanet: {},
             detalleVehicle: {},
-            colorFavorite: "far fa-heart"
+            colorFavorite: "far fa-heart",
+            hideAuth: "visually-hidden",
+            viewAuth: "",
+            auth: false
         },
         actions: {
             // Use getActions to call a function within a fuction
             addFavorite: (item) => {
                 let store = getStore()
+
                 if (store.listFavorite.includes(item)) {
                     getActions().deleteFavorite(item);
                 } else {
@@ -177,7 +181,51 @@ const getState = ({
                 } else {
                     return ""
                 }
+            },
+
+            logoutUser: () => {
+                localStorage.removeItem('token');
+                setStore({
+                    auth: false,
+                    hideAuth: "visually-hidden",
+                    viewAuth: "",
+                    listFavorite: []
+
+                })
+            },
+
+            loginUser: (username, password) => {
+                try {
+                    fetch('https://3000-sduartecor-starwarsapir-6aum3vely7b.ws-us84.gitpod.io/login', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            "username": username,
+                            "password": password
+
+                        })
+                    }).then((response) => {
+                        if (response.status === 200) {
+                            setStore({
+                                auth: true,
+                                hideAuth: "",
+                                viewAuth: "visually-hidden"
+                            })
+                        }
+                        return response.json()
+                    }).then((data) => {
+                        localStorage.setItem("token", data.access_token)
+                        console.log(data);
+                    });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
             }
+
+
 
 
 

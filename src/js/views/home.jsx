@@ -27,10 +27,10 @@ export const Home = () => {
 <div id="carouselExample"  className="carousel slide mt-3">
   <div className="carousel-inner">
     
-    <div class="carousel-item active">
+    <div className="carousel-item active">
       <img src="https://mlpnk72yciwc.i.optimole.com/cqhiHLc.IIZS~2ef73/w:auto/h:auto/q:75/https://bleedingcool.com/wp-content/uploads/2020/05/star-wars-the-complete-saga-will-be-on-disney-monday-credit-disney.jpg" className="d-block w-100"  alt="..."/>
     </div>
-    <div class="carousel-item">
+    <div className="carousel-item">
       <img src="https://cdn.shopify.com/s/files/1/0265/2769/4934/products/Revenge-of-the-Sith-20th-Century-Fox-2005.-One-Sheet-2722-X-4022-DS-Style-B_1200x1200.jpg?v=1608527021" className="d-block w-100"  alt="..."/>
     </div>
   </div>

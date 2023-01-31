@@ -1,10 +1,18 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
 
   const { store, actions } = useContext(Context);
+  const navigate = useNavigate() 
+
+  function handleLogout() {
+		actions.logoutUser()
+		navigate("/login")
+
+	}
 
 	return (
     <nav className="navbar bg-dark border border-secondary border-end-0 border-start-0">
@@ -18,7 +26,15 @@ export const Navbar = () => {
 
 </div>
 
-<div className="dropdown d-flex float-end" >
+<div className="dropdown d-flex float-end me-3" >
+<Link type="btn btn-lg" to={"/login"} className={"btn btn-outline-danger " + store.viewAuth}>Log In</Link>
+</div>
+
+<div className="dropdown d-flex float-end me-3" >
+<button type="btn btn-lg" onClick={handleLogout} className={"btn btn-outline-danger " + store.hideAuth}>Log out</button>
+</div>
+
+<div className={"dropdown d-flex float-end " + store.hideAuth} >
   <button className="btn btn-lg btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Favorites <div className="badge bg-secondary text-wrap">{store.listFavorite.length}</div> 
   </button>
@@ -27,6 +43,8 @@ export const Navbar = () => {
   <li className={"dropdown-item disabled text-center " + store.mensaje} aria-disabled="true">(empty)</li>
   </ul>
 </div>
+
+
 
 </div>
 </nav>

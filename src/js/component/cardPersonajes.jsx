@@ -1,12 +1,21 @@
 import React, { useState, useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
 
 
 export const CardPersonajes = () => {
 
 	const {store, actions} = useContext(Context);
+	const navigate = useNavigate() 
 
+	function añadirFavoritos(item) {
+		if (store.auth === true) {
+			actions.addFavorite(item)
+		} else {
+			alert("Hola")
+		}
+	}
 
 
     return(
@@ -22,7 +31,7 @@ export const CardPersonajes = () => {
 	  </div>
 	  </Link> 
 	  <div className="card-footer border-danger"> 
-	  <Link className="btn btn-outline-dark border-0" onClick={()=> actions.addFavorite(item)}><i className={actions.changeColor(item)}></i></Link>
+	  <Link className="btn btn-outline-dark border-0" onClick={()=> añadirFavoritos(item)}><i className={actions.changeColor(item)}></i></Link>
 	  </div>
 	  </div>
 	  </div>)}
